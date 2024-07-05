@@ -125,6 +125,16 @@ module.exports = defineConfig({
         },
       });
 
+      on("before:browser:launch", (browser, browserLaunchDetails) => {
+        if (browser.name === "chrome") {
+          const extPath = path.resolve("./cypress/tools/openapi-devtools/dist");
+
+          browserLaunchDetails.extensions.push(extPath);
+        }
+
+        return browserLaunchDetails;
+      });
+
       codeCoverageTask(on, config);
       return config;
     },
