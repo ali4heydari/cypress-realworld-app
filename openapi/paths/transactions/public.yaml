@@ -1,0 +1,147 @@
+get:
+  summary: /transactions/public
+  description: '**Host**: http://localhost:3001'
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              pageData:
+                type: object
+                properties:
+                  page:
+                    type: integer
+                  limit:
+                    type: integer
+                  hasNextPages:
+                    type: boolean
+                  totalPages:
+                    type: integer
+                required:
+                  - page
+                  - limit
+                  - hasNextPages
+                  - totalPages
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    receiverName:
+                      type: string
+                    senderName:
+                      type: string
+                    receiverAvatar:
+                      type: string
+                    senderAvatar:
+                      type: string
+                    likes:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          uuid:
+                            type: string
+                          userId:
+                            type: string
+                          transactionId:
+                            type: string
+                          createdAt:
+                            type: string
+                          modifiedAt:
+                            type: string
+                        required:
+                          - id
+                          - uuid
+                          - userId
+                          - transactionId
+                          - createdAt
+                          - modifiedAt
+                    comments:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                          uuid:
+                            type: string
+                          content:
+                            type: string
+                          userId:
+                            type: string
+                          transactionId:
+                            type: string
+                          createdAt:
+                            type: string
+                          modifiedAt:
+                            type: string
+                        required:
+                          - id
+                          - uuid
+                          - content
+                          - userId
+                          - transactionId
+                          - createdAt
+                          - modifiedAt
+                    id:
+                      type: string
+                    uuid:
+                      type: string
+                    source:
+                      type: string
+                    amount:
+                      type: integer
+                    description:
+                      type: string
+                    privacyLevel:
+                      type: string
+                    receiverId:
+                      type: string
+                    senderId:
+                      type: string
+                    balanceAtCompletion:
+                      type: integer
+                    status:
+                      type: string
+                    requestStatus:
+                      type: string
+                    requestResolvedAt:
+                      type: string
+                    createdAt:
+                      type: string
+                    modifiedAt:
+                      type: string
+                  required:
+                    - receiverName
+                    - senderName
+                    - receiverAvatar
+                    - senderAvatar
+                    - likes
+                    - comments
+                    - id
+                    - uuid
+                    - source
+                    - amount
+                    - description
+                    - privacyLevel
+                    - receiverId
+                    - senderId
+                    - balanceAtCompletion
+                    - status
+                    - requestStatus
+                    - requestResolvedAt
+                    - createdAt
+                    - modifiedAt
+            required:
+              - pageData
+              - results
+      description: ''
+      headers: {}
+  security:
+    - apikey_cookie_connect.sid: []
+    - apikey_header_cookie: []

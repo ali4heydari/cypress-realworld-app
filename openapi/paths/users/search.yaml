@@ -1,0 +1,68 @@
+get:
+  summary: /users/search
+  description: '**Host**: http://localhost:3001'
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    uuid:
+                      type: string
+                    firstName:
+                      type: string
+                    lastName:
+                      type: string
+                    username:
+                      type: string
+                    password:
+                      type: string
+                    email:
+                      type: string
+                    phoneNumber:
+                      type: string
+                    avatar:
+                      type: string
+                    defaultPrivacyLevel:
+                      type: string
+                    balance:
+                      type: integer
+                    createdAt:
+                      type: string
+                    modifiedAt:
+                      type: string
+                  required:
+                    - id
+                    - uuid
+                    - firstName
+                    - lastName
+                    - username
+                    - password
+                    - email
+                    - phoneNumber
+                    - avatar
+                    - defaultPrivacyLevel
+                    - balance
+                    - createdAt
+                    - modifiedAt
+            required:
+              - results
+      description: ''
+      headers: {}
+  security:
+    - apikey_cookie_connect.sid: []
+    - apikey_header_cookie: []
+  parameters:
+    - name: q
+      in: query
+      required: false
+      schema:
+        type: string

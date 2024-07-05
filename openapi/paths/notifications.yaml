@@ -1,0 +1,53 @@
+get:
+  summary: /notifications
+  description: '**Host**: http://localhost:3001'
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    userFullName:
+                      type: string
+                    id:
+                      type: string
+                    uuid:
+                      type: string
+                    userId:
+                      type: string
+                    likeId:
+                      type: string
+                    transactionId:
+                      type: string
+                    isRead:
+                      type: boolean
+                    createdAt:
+                      type: string
+                    modifiedAt:
+                      type: string
+                    status:
+                      type: string
+                    commentId:
+                      type: string
+                  required:
+                    - userFullName
+                    - id
+                    - uuid
+                    - userId
+                    - transactionId
+                    - isRead
+                    - createdAt
+                    - modifiedAt
+            required:
+              - results
+      description: ''
+      headers: {}
+  security:
+    - apikey_cookie_connect.sid: []
+    - apikey_header_cookie: []
