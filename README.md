@@ -37,13 +37,10 @@ A payment application to demonstrate <strong>real-world</strong> usage of <a hre
   <img style='width: 70%' alt="Cypress Real World App" src="./public/img/rwa-readme-screenshot.png" />
 </p>
 
-> 💬 **Note from maintainers**
->
-> This application is purely for demonstration and educational purposes. Its setup and configuration resemble typical real-world applications, but it's not a full-fledged production system. Use this app to learn, experiment, tinker, and practice application testing with Cypress.
->
-> Happy Testing!
+# Cypress Real World app
 
----
+This repo in a proof of concept for generating open api spec with cypress and openapi-devtools.
+Learn more about this approach in my [blog post](https://ali4heydari.tech/blog/e2e-test-oriented-openapi-generation?utm_source=github-cypress-realworld-app).
 
 ## Features
 
